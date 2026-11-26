@@ -1394,6 +1394,24 @@
         amount: -50
         time: 12
 
+- type: reagent
+  id: Solidizium
+  name: reagent-name-solidizium
+  group: Medicine
+  desc: reagent-desc-solidizium
+  physicalDesc: reagent-physical-desc-thick
+  flavor: dense
+  color: "#c48b5c"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:UnhuskAbsorbed
+        conditions:
+        - !type:ReagentCondition
+          reagent: Solidizium
+          min: 10
+
 # Wraith
 - type: reagent
   id: Formaldehyde
