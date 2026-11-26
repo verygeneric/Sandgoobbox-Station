@@ -27,4 +27,14 @@ public sealed partial class AbsorbedSystem : EntitySystem
         if (args.NewMobState != MobState.Dead)
             RemComp<AbsorbedComponent>(ent);
     }
+            SubscribeLocalEvent<WasAbsorbedComponent, ExaminedEvent>(OnWasAbsorbedExamine);
+
+    private void OnWasAbsorbedExamine(Entity<WasAbsorbedComponent> ent, ref ExaminedEvent args)
+    {
+        if (HasComp<AbsorbedComponent>(ent))
+            return;
+            
+        // shows someone was rezzed after being husked
+        args.PushMarkup(Loc.GetString("changeling-absorb-revived-onexamine", ("target", Identity.Entity(ent, EntityManager))));
+    }
 }

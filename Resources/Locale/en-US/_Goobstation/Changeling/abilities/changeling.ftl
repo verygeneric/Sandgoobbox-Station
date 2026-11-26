@@ -26,8 +26,11 @@ changeling-absorb-end-self-ling = Another changeling was absorbed. Our body is f
 changeling-absorb-end-self-ling-incompatible = Another changeling was absorbed. However, their current form prevented us from extracting their DNA sequence.
 changeling-absorb-end-partial = The organism was absorbed. We were unable to extract anything to aid in our evolution.
 changeling-absorb-onexamine = [color=red]The body feels hollow.[/color]
+changeling-absorb-revived-onexamine = [color=red]They look like an overinflated balloon.[/color]
 changeling-absorb-fail-nograb = We aren't grabbing hard enough.
 changeling-absorb-fail-onfire = The target is on fire, put them out first!
+changeling-absorb-fail-reabsorb-other = Another of our kind has been here before!
+changeling-absorb-fail-reabsorb-self = We have already fed on this one!
 
 
 changeling-absorbbiomatter-start = {THE($user)} starts absorbing the food!

@@ -118,6 +118,12 @@ public sealed partial class ChangelingIdentityComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int TotalStolenDNA = 0;
 
+    /// <summary>
+    ///     Damage taken after attempting to husk someone who was already absorbed.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 ReabsorbPenalty = 30;
+
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public TransformData? CurrentForm;
 
