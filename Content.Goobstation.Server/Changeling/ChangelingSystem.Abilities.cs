@@ -124,6 +124,22 @@ public sealed partial class ChangelingSystem
             _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-unabsorbable"), uid, uid);
             return;
         }
+        if (TryComp<WasAbsorbedComponent>(target, out var wasAbsorbed)
+            && wasAbsorbed.AbsorberMind != null
+            && wasAbsorbed.AbsorberMind == _mind.GetMind(uid))
+        {
+            // does dmg to a ling who tries absorbing someone they already munched on earlier
+            var penalty = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), comp.ReabsorbPenalty);
+            _damage.TryChangeDamage(uid, penalty, true, false, targetPart: TargetBodyPart.All);
+
+            _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-reabsorb-self"), uid, uid, PopupType.MediumCaution);
+            return;
+        }
+        if (HasComp<WasAbsorbedComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-reabsorb-other"), uid, uid);
+            return;
+        }
         if (!IsIncapacitated(target) && !IsHardGrabbed(target))
         {
             _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-nograb"), uid, uid);
