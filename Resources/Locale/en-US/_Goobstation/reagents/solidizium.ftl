@@ -1,0 +1,1 @@
+solidizium-effect-cured = The body fills back out, no longer hollow.

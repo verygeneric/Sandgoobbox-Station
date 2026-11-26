@@ -10,3 +10,9 @@ entity-effect-guidebook-modify-disgust =
                 *[-1] decrease
             }
     } disgust level by { $amount }
+
+entity-effect-guidebook-cure-absorbed =
+    { $chance ->
+        [1] Restores
+        *[other] restore
+    } a body hollowed by a changeling, allowing it to be revived
