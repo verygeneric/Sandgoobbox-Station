@@ -11,7 +11,7 @@ entity-effect-guidebook-modify-disgust =
             }
     } disgust level by { $amount }
 
-entity-effect-guidebook-cure-absorbed =
+entity-effect-guidebook-unhusk-absorbed =
     { $chance ->
         [1] Restores
         *[other] restore

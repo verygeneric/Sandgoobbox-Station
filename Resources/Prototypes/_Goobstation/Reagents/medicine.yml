@@ -1415,11 +1415,17 @@
       - !type:HealthChange # Also made it eat up some gene damage and convert a bit to poison cause you're using genecide anyways
         damage:
           groups:
-            Genetic: -2
+            Genetic: -12
       - !type:HealthChange
         damage:
           types:
-            Poison: 1
+            Poison: 6
+      - !type:ModifyBloodLevel # same as Artiplates
+        amount: 10
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -5
 
 # Wraith
 - type: reagent
