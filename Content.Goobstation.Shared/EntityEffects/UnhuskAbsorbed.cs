@@ -17,8 +17,8 @@ namespace Content.Goobstation.Shared.EntityEffects;
 /// </summary>
 public sealed partial class UnhuskAbsorbedSystem : EntityEffectSystem<AbsorbedComponent, UnhuskAbsorbed>
 {
-    [Dependency] private readonly SharedBloodstreamSystem _blood = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedBloodstreamSystem _blood = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     // // check for AbsorbedComponent before removing Unrevivable which still leaves room for error but it's good enough
     protected override void Effect(Entity<AbsorbedComponent> entity, ref EntityEffectEvent<UnhuskAbsorbed> args)
