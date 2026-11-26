@@ -178,6 +178,7 @@ public sealed partial class ChangelingSystem
 
         if (args.Cancelled
             || HasComp<AbsorbedComponent>(target)
+            || HasComp<WasAbsorbedComponent>(target)
             || !IsIncapacitated(target) && !IsHardGrabbed(target))
             return;
 
@@ -190,6 +191,7 @@ public sealed partial class ChangelingSystem
 
         EnsureComp<AbsorbedComponent>(target);
         EnsureComp<UnrevivableComponent>(target);
+        EnsureComp<WasAbsorbedComponent>(target).AbsorberMind = _mind.GetMind(uid);
 
         TryComp<ChangelingChemicalComponent>(uid, out var chemComp); // user's chemical component
         var popup = string.Empty;

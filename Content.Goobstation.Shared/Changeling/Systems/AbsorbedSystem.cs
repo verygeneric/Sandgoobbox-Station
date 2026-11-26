@@ -2,6 +2,7 @@
 
 using Content.Goobstation.Common.Changeling;
 using Content.Shared.Examine;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
 
 namespace Content.Goobstation.Shared.Changeling.Systems;
@@ -14,6 +15,7 @@ public sealed partial class AbsorbedSystem : EntitySystem
 
         SubscribeLocalEvent<AbsorbedComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<AbsorbedComponent, MobStateChangedEvent>(OnMobStateChange);
+        SubscribeLocalEvent<WasAbsorbedComponent, ExaminedEvent>(OnWasAbsorbedExamine);
     }
 
     private void OnExamine(Entity<AbsorbedComponent> ent, ref ExaminedEvent args)
@@ -27,13 +29,12 @@ public sealed partial class AbsorbedSystem : EntitySystem
         if (args.NewMobState != MobState.Dead)
             RemComp<AbsorbedComponent>(ent);
     }
-            SubscribeLocalEvent<WasAbsorbedComponent, ExaminedEvent>(OnWasAbsorbedExamine);
 
     private void OnWasAbsorbedExamine(Entity<WasAbsorbedComponent> ent, ref ExaminedEvent args)
     {
         if (HasComp<AbsorbedComponent>(ent))
             return;
-            
+
         // shows someone was rezzed after being husked
         args.PushMarkup(Loc.GetString("changeling-absorb-revived-onexamine", ("target", Identity.Entity(ent, EntityManager))));
     }
