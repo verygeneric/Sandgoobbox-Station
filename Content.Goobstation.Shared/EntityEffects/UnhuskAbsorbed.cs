@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Common.Changeling;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;

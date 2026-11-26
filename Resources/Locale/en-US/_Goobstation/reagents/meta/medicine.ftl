@@ -83,7 +83,7 @@ reagent-name-genecide = genecide
 reagent-desc-genecide = Blows genetic damage away, literally. Make sure to monitor patients taking it.
 
 reagent-name-solidizium = solidizium
-reagent-desc-solidizium = A dense regenerative slurry that restores hollowed corpses on a cellular level, allowing them to be revived. Also coverts some cell damage into poison. Works on dead.
+reagent-desc-solidizium = A dense regenerative slurry that restores hollowed corpses on a cellular level, allowing them to be revived. Also converts some cell damage into poison. Works on dead.
 
 reagent-name-procenyl-lazide-sludge = procenyl lazide sludge
 reagent-desc-procenyl-lazide-sludge = Relatively easy to create solution, needs heating to bind properly in a notoriously inefficient reaction.
