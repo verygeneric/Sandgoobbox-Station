@@ -362,6 +362,21 @@
     Genecide: 3
 
 - type: reaction
+  id: Solidizium # hehe no more lingus RRs (still a pain in the ass to make)
+  minTemp: 400
+  reactants:
+    Arcryox:
+      amount: 1
+    Genecide:
+      amount: 1
+    Artiplates:
+      amount: 1
+    Synthcells:
+      amount: 1
+  products:
+    Solidizium: 1
+
+- type: reaction
   id: Hercuri
   maxTemp: 100
   reactants:

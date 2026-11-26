@@ -1405,12 +1405,21 @@
   worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.5
       effects:
-      - !type:UnhuskAbsorbed
+      - !type:UnhuskAbsorbed # The bit that does the unhusking
         conditions:
         - !type:ReagentCondition
           reagent: Solidizium
           min: 10
+      - !type:HealthChange # Also made it eat up some gene damage and convert a bit to poison cause you're using genecide anyways
+        damage:
+          groups:
+            Genetic: -2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
 
 # Wraith
 - type: reagent
