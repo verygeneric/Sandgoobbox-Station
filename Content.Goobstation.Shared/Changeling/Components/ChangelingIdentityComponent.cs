@@ -34,6 +34,11 @@ public sealed partial class ChangelingIdentityComponent : Component
     [DataField("armorStrip")]
     public SoundSpecifier ArmourStripSound = new SoundPathSpecifier("/Audio/_Goobstation/Changeling/Effects/armour_strip.ogg");
 
+    [DataField]
+    public SoundSpecifier ReabsorbSelfSound = new SoundPathSpecifier("/Audio/_Goobstation/Weapons/Effects/metalcrush.ogg");
+    [DataField]
+    public SoundSpecifier ReabsorbOtherSound = new SoundPathSpecifier("/Audio/_Goobstation/Changeling/Effects/armour_strip.ogg");
+
     public readonly List<EntProtoId> BaseChangelingActions = new()
     {
         "ActionEvolutionMenu",

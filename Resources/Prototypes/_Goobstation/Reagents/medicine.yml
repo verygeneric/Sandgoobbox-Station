@@ -1400,7 +1400,7 @@
   group: Medicine
   desc: reagent-desc-solidizium
   physicalDesc: reagent-physical-desc-thick
-  flavor: dense
+  flavor: medicine
   color: "#c48b5c"
   worksOnTheDead: true
   metabolisms:

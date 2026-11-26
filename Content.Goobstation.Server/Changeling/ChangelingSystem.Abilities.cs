@@ -133,11 +133,17 @@ public sealed partial class ChangelingSystem
             _damage.TryChangeDamage(uid, penalty, true, false, targetPart: TargetBodyPart.All);
 
             _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-reabsorb-self"), uid, uid, PopupType.MediumCaution);
+            
+            _audio.PlayPvs(comp.ReabsorbSelfSound, uid);
+
             return;
         }
         if (HasComp<WasAbsorbedComponent>(target))
         {
             _popup.PopupEntity(Loc.GetString("changeling-absorb-fail-reabsorb-other"), uid, uid);
+
+            _audio.PlayPvs(comp.ReabsorbOtherSound, uid);
+
             return;
         }
         if (!IsIncapacitated(target) && !IsHardGrabbed(target))
