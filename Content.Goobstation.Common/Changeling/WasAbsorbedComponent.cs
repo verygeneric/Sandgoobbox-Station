@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Common.Changeling;
 
 /// <summary>
-/// Flags a previously-hollowed body. Unlike <see cref="AbsorbedComponent"/> this stays after the body is revived.
+/// Flags a body that has been hollowed at any point, even if unhusked.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class WasAbsorbedComponent : Component
